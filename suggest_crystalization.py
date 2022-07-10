@@ -23,9 +23,12 @@ key = args[0]
 best_match = find_best_match(pd.read_csv('protein_base.csv'), key, int(args[1]), .1)
 end = time.time()
 similarity = list(best_match['fuzzy_similarity'])[0]
+a = len(key)
+b = len( list(best_match['sequence'])[0])
 
-print( f"Match found! Confidence (similarity score): {similarity}")
+distance = a+b-(a+b)*similarity/100.
 
+print( f"Match found! Confidence (similarity score): {similarity} - sequences differ in {distance} bases")
 for k, v in dict(best_match).items():
     if (k == 'pdb_id') or (list(v)[0] == 1):
         print(f'{k} : {list(v)[0]}')

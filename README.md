@@ -7,5 +7,5 @@ python suggest_crystalization.py MAHHHHHHMSQTTAPFLPFTRPEIDEETIQGVVEVLRSGWITTGPQC
 remember to run
 
 ```
-pip install numpy fuzzywuzzy pandas
+pip install numpy fuzzywuzzy[speedup] pandas
 ```
